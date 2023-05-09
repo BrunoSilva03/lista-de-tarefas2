@@ -67,7 +67,14 @@ div#formulario {
     margin: auto;
     border-radius: 15px;
     box-shadow: 3px 3px 15px rgba(0, 128, 0, 0.618);
+    position: relative;
+    
 
+}
+
+div.tasks {
+    position: relative;
+    
 }
 
 p#ptarefa {
@@ -89,6 +96,8 @@ p#pbotaoenviar {
 }
 
 
+
+
 input#idtarefa {
     margin-left: 33px;
 }
@@ -103,6 +112,14 @@ input#idhorario {
 
 input#botaoenviar {
     background-color: #00BF63;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    border-color: white;
+}
+
+input#botaocancelar {
+    background-color: #d82626;
     color: white;
     padding: 5px;
     border-radius: 5px;

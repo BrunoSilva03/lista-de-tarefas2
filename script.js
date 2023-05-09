@@ -23,12 +23,16 @@ function adicionarTarefa() {
         ocultaparagrafoinicial();
         let tasks = document.querySelector('div.tasks');
         let novaTask = document.createElement('div');
+        novaTask.style.background = "whitesmoke";
         novaTask.innerHTML = `<p style="text-transform: uppercase; color: green">${tarefa}</p>
                              <p>DATA: ${data}</p>
-                             <p>HORÁRIO: ${horario}</p>`
+                             <p>HORÁRIO: ${horario}</p>
+                             <br>`
     
         mostrarFormulario();
         tasks.appendChild(novaTask);
+        limpaCampos();
+        
     }
 
 }
@@ -38,3 +42,10 @@ function ocultaparagrafoinicial() {
     window.document.getElementById('paragrafoinicial').style.display = 'none';
 }
 
+
+
+function limpaCampos() {
+    document.getElementById('idtarefa').value = '';
+    document.getElementById('iddata').value = '';
+    document.getElementById('idhorario').value = '';
+}
