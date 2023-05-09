@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div.body-content {
+    /** Essa margem vai evitar que o conteudo fique por baixo do rodapé **/
+    margin-bottom: 40px;
+}
+
+
+
+
+h1 {
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+button {
+    grid-area: bmais;
+    background-color: white;
+    color: white;
+    border: none;
+
+}
+
+div.tasks {
+    text-align: center;
+    margin-top: 15px;
+}
+
+div#botaoMais {
+    position: absolute;
+    top: 90%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+}
+
+main>p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+main {
+    height: 100vh;
+    background-image: url(imagens/checklist-desenho.png);
+    background-size: 300px 500px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+/*Estilos do formulário*/
+
+div#formulario {
+    display: none;
+    background-color: whitesmoke;
+    padding: 33px;
+    text-align: center;
+    margin-top: 10%;
+    max-width: 50%;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 3px 3px 15px rgba(0, 128, 0, 0.618);
+
+}
+
+p#ptarefa {
+    margin-left: 40px;
+}
+
+p#pdata {
+    margin-top: 33px;
+    margin-bottom: 33px;
+}
+
+p#phorario {
+    margin-bottom: 33px;
+    margin-left: 50px;
+}
+
+p#pbotaoenviar {
+    text-align: right;
+}
+
+
+input#idtarefa {
+    margin-left: 33px;
+}
+
+input#iddata {
+    margin-left: 33px;
+}
+
+input#idhorario {
+    margin-left: 20px;
+}
+
+input#botaoenviar {
+    background-color: #00BF63;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    border-color: white;
+}
+
+
+
+
+
+/* Pra fixar o rodapé no final da página*/
+footer {
+    border-top: 1px solid #333;
+    /**Pra criar uma linha em cima separando o rodapé do conteúdo**/
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+
+}

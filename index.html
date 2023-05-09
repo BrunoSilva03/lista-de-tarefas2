@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
+</head>
+<body>
+    <head>
+        <h1>Lista de Tarefas</h1>
+    </head>
+    <main>
+        <div class="tasks">
+            <p id="paragrafoinicial">A lista está vazia no momento. Clique em "+" para adicionar uma tarefa</p>
+        </div>
+
+        <div id="formulario">
+            <form action="script.js">
+                <p id="ptarefa"><label for="idtarefa">Tarefa: </label> <input type="text" name="tarefa" id="idtarefa" required></p>
+                <p id="pdata"><label for="iddata">Data: </label> <input type="date" name="data" id="iddata"></p>
+                <p id="phorario"><label for="idhorario">Horário: </label> <input type="datetime" name="horario" id="idhorario"></p>
+                <p id="pbotaoenviar"><input type="button" value="Enviar Dados" id="botaoenviar" onclick="adicionarTarefa()"></p>
+            </form>
+        </div>
+
+        <div id="botaoMais">
+            <button id="buttonMais" value="Adicionar Tarefa" onclick="mostrarFormulario()">
+            <img src="imagens/simbolo-mais-50px-50px.png" alt="Adicionar"></button>
+        </div>
+    </main>
+    <footer>&copy;Bruno Silva Rodrigues</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
