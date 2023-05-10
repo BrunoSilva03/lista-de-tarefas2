@@ -1,13 +1,13 @@
 function mostrarFormulario() {
     let displayForm = document.getElementById('formulario').style.display;
 
-    if(displayForm == 'none') {
+    if (displayForm == 'none') {
         document.getElementById('formulario').style.display = 'block';
     }
-    if(displayForm == '') {
+    if (displayForm == '') {
         document.getElementById('formulario').style.display = 'block';
     }
-    if(displayForm == 'block') {
+    if (displayForm == 'block') {
         document.getElementById('formulario').style.display = 'none';
     }
 }
@@ -17,18 +17,19 @@ function adicionarTarefa() {
     let data = document.getElementById('iddata').value;
     let horario = document.getElementById('idhorario').value;
 
-    if(tarefa == '' || data == '' || horario == '') {
+    if (tarefa == '' || data == '' || horario == '') {
         alert('Preencha todos os campos por favor!')
     } else {
         ocultaparagrafoinicial();
         insereTask(tarefa, data, horario);
-        
-        
+
+
     }
 
 }
 
 var contador = 0;
+var numerodaDiv = [];
 
 function insereTask(tarefa, data, horario) {
     let tasks = document.querySelector('div.tasks');
@@ -38,7 +39,9 @@ function insereTask(tarefa, data, horario) {
     let id = document.createAttribute('id');
     contador++;
 
+    let cont = contador;
     id.value = 'div-' + contador;
+    numerodaDiv[contador] = id.value;
 
     novaTask.setAttributeNode(id);
 
@@ -50,8 +53,10 @@ function insereTask(tarefa, data, horario) {
     novaTask.innerHTML = `<p style="text-transform: uppercase; color: green">${tarefa}</p>
                          <p>DATA: ${data}</p>
                          <p>HORÁRIO: ${horario}</p>
-                         <input style="color: white; background-color: #d82626; padding: 5px; border-radius: 5px; border-color: white;" type="button" value="Excluir" onclick="excluirTask(tasks, novaTask)">
+                         <input style="color: white; background-color: #d82626; padding: 5px; border-radius: 5px; border-color: white;" type="button" name="botaoexcluir" id="button${contador}" value="Excluir" onclick="excluirTask()">
                          <br>`
+
+    
 
     mostrarFormulario();
     tasks.appendChild(novaTask);
@@ -59,8 +64,13 @@ function insereTask(tarefa, data, horario) {
 }
 
 
-function excluirTask(tasks, novaTask) {
-    tasks.removeChild(novaTask);
+function excluirTask() {
+    botao = document.querySelector('input[name="botaoexcluir"]').id;
+
+
+    tasks = document.querySelector('div.tasks');
+    removeTask = document.querySelector(`div#${numerodaDiv[botao]}`)
+    tasks.removeChild(removeTask);
 }
 
 
