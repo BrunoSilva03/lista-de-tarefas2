@@ -45,6 +45,8 @@ function insereTask(tarefa, data, horario) {
 
     novaTask.setAttributeNode(id);
 
+    let divEspecifica = id.value;
+
     novaTask.style.background = "whitesmoke";
     novaTask.style.boxShadow = "3px 3px 3px green";
     novaTask.style.padding = "20px";
@@ -53,7 +55,7 @@ function insereTask(tarefa, data, horario) {
     novaTask.innerHTML = `<p style="text-transform: uppercase; color: green">${tarefa}</p>
                          <p>DATA: ${data}</p>
                          <p>HORÁRIO: ${horario}</p>
-                         <input style="color: white; background-color: #d82626; padding: 5px; border-radius: 5px; border-color: white;" type="button" name="botaoexcluir" id="button${contador}" value="Excluir" onclick="excluirTask()">
+                         <input style="color: white; background-color: #d82626; padding: 5px; border-radius: 5px; border-color: white;" type="button" name="botaoexcluir" id="button${divEspecifica}" value="Excluir" onclick="excluirTask(${divEspecifica})">
                          <br>`
 
     
@@ -64,12 +66,12 @@ function insereTask(tarefa, data, horario) {
 }
 
 
-function excluirTask() {
-    botao = document.querySelector('input[name="botaoexcluir"]').id;
+function excluirTask(divEspecifica) {
+    /*botao = document.querySelector('input[name="botaoexcluir"]').id;*/
 
 
     tasks = document.querySelector('div.tasks');
-    removeTask = document.querySelector(`div#${numerodaDiv[botao]}`)
+    removeTask = document.querySelector(`div#${divEspecifica}`)
     tasks.removeChild(removeTask);
 }
 
