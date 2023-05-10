@@ -21,20 +21,32 @@ function adicionarTarefa() {
         alert('Preencha todos os campos por favor!')
     } else {
         ocultaparagrafoinicial();
-        let tasks = document.querySelector('div.tasks');
-        let novaTask = document.createElement('div');
-        novaTask.style.background = "whitesmoke";
-        novaTask.innerHTML = `<p style="text-transform: uppercase; color: green">${tarefa}</p>
-                             <p>DATA: ${data}</p>
-                             <p>HORÁRIO: ${horario}</p>
-                             <br>`
-    
-        mostrarFormulario();
-        tasks.appendChild(novaTask);
-        limpaCampos();
+        insereTask(tarefa, data, horario);
+        
         
     }
 
+}
+
+
+function insereTask(tarefa, data, horario) {
+    let tasks = document.querySelector('div.tasks');
+    tasks.style.marginTop = "0px";
+    
+    let novaTask = document.createElement('div');
+    novaTask.style.background = "whitesmoke";
+    novaTask.style.boxShadow = "3px 3px 3px green";
+    novaTask.style.padding = "20px";
+    novaTask.style.borderTop = "1px solid green";
+    novaTask.style.marginTop = "0px";
+    novaTask.innerHTML = `<p style="text-transform: uppercase; color: green">${tarefa}</p>
+                         <p>DATA: ${data}</p>
+                         <p>HORÁRIO: ${horario}</p>
+                         <br>`
+
+    mostrarFormulario();
+    tasks.appendChild(novaTask);
+    limpaCampos();
 }
 
 
