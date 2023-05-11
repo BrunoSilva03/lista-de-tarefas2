@@ -67,7 +67,7 @@ function insereTask(tarefa, data, horario) {
 
 
 function excluirTask(divEspecifica) {
-    /*botao = document.querySelector('input[name="botaoexcluir"]').id;*/
+    botao = document.querySelector('input[name="botaoexcluir"]').id;
 
 
     tasks = document.querySelector('div.tasks');
