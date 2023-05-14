@@ -66,9 +66,6 @@ function insereTask(tarefa, data, horario) {
 }
 
 
-function teste() {
-    console.log('Ícone');
-}
 
 
 function excluirTask(divEspecifica) {
