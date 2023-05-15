@@ -17,6 +17,7 @@ div.body-content {
 h1 {
     text-align: center;
     border-bottom: 1px solid #333;
+    
 }
 
 button {
@@ -30,11 +31,14 @@ button {
 div.tasks {
     text-align: center;
     margin-top: 15px;
+    cursor: pointer;
 }
 
-div.tasks:hover > div {
-    background-color: rgb(40, 196, 40);
+/*
+div.tasks:hover {
+    
 }
+*/
 
 
 div#botaoMais {

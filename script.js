@@ -63,7 +63,7 @@ function insereTask(tarefa, data, horario) {
     novaTask.innerHTML = `<p style="text-transform: uppercase; color: green">${tarefa}</p>
                          <p>DATA: ${data}</p>
                          <p>HORÁRIO: ${horario}</p>
-                         <input style="color: white; background-color: #d82626; padding: 5px; border-radius: 5px; border-color: white;" type="button" name="botaoexcluir" id="${divEspecifica}" value="Excluir" onclick="excluirTask(${divEspecifica})">
+                         <input style="color: white; background-color: #d82626; padding: 5px; border-radius: 5px; border-color: white;" type="button" name="botaoexcluir" id="${divEspecifica}" value="Excluir" onclick="excluirTask()">
                          <br>`
 
     
@@ -73,13 +73,39 @@ function insereTask(tarefa, data, horario) {
     limpaCampos();
 }
 
+document.body.onclick = function() {
+    console.log("CLICOU: " + event.target);
+}
+
+var testeDiv = document.getElementById('tasks');
+testeDiv.addEventListener('click', function() {
+    console.log("CLIQUE DE TESTE: " + this.id);
+});
 
 
+var area = window.document.querySelector('div.tasks');
+area.addEventListener('click', clicouai);
+area.addEventListener('mouseenter', entrou);
+area.addEventListener('mouseout', saiu);
 
-function excluirTask(divEspecifica) {
+function clicouai() {
+console.log("CLICOU");
+}
+
+function entrou() {
+console.log("ENTROU");
+}
+
+
+function saiu() {
+console.log("SAIU");
+}
+
+
+function excluirTask() {
     botao = document.querySelector('input[name="botaoexcluir"]').id;
     console.log("BOTÃO: " + botao)
-    divEspecifica = document.querySelector(`div[class="tasks"]`).id;
+    divEspecifica = botao;
 
 
     tasks = document.querySelector('div.tasks');
