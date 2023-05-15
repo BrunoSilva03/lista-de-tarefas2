@@ -32,6 +32,11 @@ div.tasks {
     margin-top: 15px;
 }
 
+div.tasks:hover > div {
+    background-color: rgb(40, 196, 40);
+}
+
+
 div#botaoMais {
     position: absolute;
     top: 90%;
@@ -72,10 +77,9 @@ div#formulario {
 
 }
 
-div.tasks {
-    position: relative;
-    
-}
+
+
+
 
 p#ptarefa {
     margin-left: 40px;

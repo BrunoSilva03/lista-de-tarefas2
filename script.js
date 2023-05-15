@@ -63,7 +63,7 @@ function insereTask(tarefa, data, horario) {
     novaTask.innerHTML = `<p style="text-transform: uppercase; color: green">${tarefa}</p>
                          <p>DATA: ${data}</p>
                          <p>HORÁRIO: ${horario}</p>
-                         <input style="color: white; background-color: #d82626; padding: 5px; border-radius: 5px; border-color: white;" type="button" name="botaoexcluir" id="${divEspecifica}" value="Excluir" onclick="excluirTask()">
+                         <input style="color: white; background-color: #d82626; padding: 5px; border-radius: 5px; border-color: white;" type="button" name="botaoexcluir" id="${divEspecifica}" value="Excluir" onclick="excluirTask(${divEspecifica})">
                          <br>`
 
     
@@ -76,10 +76,10 @@ function insereTask(tarefa, data, horario) {
 
 
 
-function excluirTask() {
+function excluirTask(divEspecifica) {
     botao = document.querySelector('input[name="botaoexcluir"]').id;
     console.log("BOTÃO: " + botao)
-    divEspecifica = document.querySelector(`div[class="${}"]`).id;
+    divEspecifica = document.querySelector(`div[class="tasks"]`).id;
 
 
     tasks = document.querySelector('div.tasks');
