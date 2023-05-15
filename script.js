@@ -37,18 +37,23 @@ function insereTask(tarefa, data, horario) {
 
     let novaTask = document.createElement('div');
     let id = document.createAttribute('id');
-    /*let name = document.createAttribute('name');
-    let classe = document.createAttribute('class');*/
+    /*let name = document.createAttribute('name');*/
+    let classe = document.createAttribute('class');
     contador++;
 
-    let cont = contador;
+    /*let cont = contador;*/
     id.value = 'div-' + contador;
+    classe.value = 'div-' + contador;
     /*name.value = 'div-' + contador;*/
+
+    //INTERESSANTE:
     numerodaDiv[contador] = id.value;
 
     novaTask.setAttributeNode(id);
 
     var divEspecifica = id.value;
+    
+   
 
     novaTask.style.background = "whitesmoke";
     novaTask.style.boxShadow = "3px 3px 3px green";
@@ -58,11 +63,11 @@ function insereTask(tarefa, data, horario) {
     novaTask.innerHTML = `<p style="text-transform: uppercase; color: green">${tarefa}</p>
                          <p>DATA: ${data}</p>
                          <p>HORÁRIO: ${horario}</p>
-                         <input style="color: white; background-color: #d82626; padding: 5px; border-radius: 5px; border-color: white;" type="button" name="botaoexcluir" id="button${divEspecifica}" value="Excluir" onclick="excluirTask(${divEspecifica})">
+                         <input style="color: white; background-color: #d82626; padding: 5px; border-radius: 5px; border-color: white;" type="button" name="botaoexcluir" id="${divEspecifica}" value="Excluir" onclick="excluirTask()">
                          <br>`
 
     
-
+    
     mostrarFormulario();
     tasks.appendChild(novaTask);
     limpaCampos();
@@ -71,10 +76,10 @@ function insereTask(tarefa, data, horario) {
 
 
 
-function excluirTask(divEspecifica) {
+function excluirTask() {
     botao = document.querySelector('input[name="botaoexcluir"]').id;
     console.log("BOTÃO: " + botao)
-   /* divEspecifica = document.querySelector('div[]')*/
+    divEspecifica = document.querySelector(`div[class="${}"]`).id;
 
 
     tasks = document.querySelector('div.tasks');
