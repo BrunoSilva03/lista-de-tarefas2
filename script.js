@@ -37,15 +37,18 @@ function insereTask(tarefa, data, horario) {
 
     let novaTask = document.createElement('div');
     let id = document.createAttribute('id');
+    /*let name = document.createAttribute('name');
+    let classe = document.createAttribute('class');*/
     contador++;
 
     let cont = contador;
     id.value = 'div-' + contador;
+    /*name.value = 'div-' + contador;*/
     numerodaDiv[contador] = id.value;
 
     novaTask.setAttributeNode(id);
 
-    let divEspecifica = id.value;
+    var divEspecifica = id.value;
 
     novaTask.style.background = "whitesmoke";
     novaTask.style.boxShadow = "3px 3px 3px green";
@@ -70,6 +73,8 @@ function insereTask(tarefa, data, horario) {
 
 function excluirTask(divEspecifica) {
     botao = document.querySelector('input[name="botaoexcluir"]').id;
+    console.log("BOTÃO: " + botao)
+   /* divEspecifica = document.querySelector('div[]')*/
 
 
     tasks = document.querySelector('div.tasks');
