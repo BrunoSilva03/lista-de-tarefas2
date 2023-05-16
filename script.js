@@ -87,6 +87,7 @@ var area = window.document.querySelector('div.tasks');
 area.addEventListener('click', clicouai);
 area.addEventListener('mouseenter', entrou);
 area.addEventListener('mouseout', saiu);
+//tomar banho nessapoha
 
 function clicouai() {
 console.log("CLICOU");
