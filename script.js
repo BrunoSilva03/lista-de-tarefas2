@@ -52,8 +52,8 @@ function insereTask(tarefa, data, horario) {
     novaTask.setAttributeNode(id);
 
     var divEspecifica = id.value;
-    
-   
+
+
 
     novaTask.style.background = "whitesmoke";
     novaTask.style.boxShadow = "3px 3px 3px green";
@@ -66,19 +66,17 @@ function insereTask(tarefa, data, horario) {
                          <input style="color: white; background-color: #d82626; padding: 5px; border-radius: 5px; border-color: white;" type="button" name="botaoexcluir" id="${divEspecifica}" value="Excluir" onclick="excluirTask()">
                          <br>`
 
-    
-    
+
+
     mostrarFormulario();
     tasks.appendChild(novaTask);
     limpaCampos();
 }
 
-document.body.onclick = function() {
-    console.log("CLICOU: " + event.target);
-}
+
 
 var testeDiv = document.getElementById('tasks');
-testeDiv.addEventListener('click', function() {
+testeDiv.addEventListener('click', function () {
     console.log("CLIQUE DE TESTE: " + this.id);
 });
 
@@ -87,20 +85,31 @@ var area = window.document.querySelector('div.tasks');
 area.addEventListener('click', clicouai);
 area.addEventListener('mouseenter', entrou);
 area.addEventListener('mouseout', saiu);
-//tomar banho nessapoha
+
 
 function clicouai() {
-console.log("CLICOU");
+    console.log("CLICOU");
 }
 
 function entrou() {
-console.log("ENTROU");
+    console.log("ENTROU");
 }
 
 
 function saiu() {
-console.log("SAIU");
+    console.log("SAIU");
 }
+
+/*
+document.body.onclick = function () {
+    console.log("CLICOU: " + event.target);
+    console.log("CLIQUE TESTANDO: " + this.id);
+    var testeDiv = document.querySelector('div.tasks');
+    testeDiv.addEventListener('click', function () {
+        console.log("CLIQUE DE TESTE: " + this.id);
+    });
+}
+*/
 
 
 function excluirTask() {
